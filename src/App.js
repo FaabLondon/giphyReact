@@ -12,7 +12,8 @@ class App extends Component {
     gifs: [],
     search: '',
     rating: 'All', //All by default
-    limit: 1 // 1 by default
+    limit: 1, // 1 by default
+    error: ''
   };
 
   //ComponentDidMount - By default, shows the trending gifs
@@ -31,12 +32,15 @@ class App extends Component {
   }
 
   handleSubmit = (e) => {
-    //On submit filter based on input field
     e.preventDefault();
-    axios.get(`http://api.giphy.com/v1/gifs/search?q=${this.state.search}&api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u&limit=${this.state.limit}`)
-      .then(res => {
-        this.setState({ gifs: res.data.data }, () => console.log(this.state));
-      });
+    if(this.state.limit > 100 || this.state.limit < 1) this.setState({ error: 'Number must be between 1 and 100'});
+    else {
+      //On submit filter based on input field
+      axios.get(`http://api.giphy.com/v1/gifs/search?q=${this.state.search}&api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u&limit=${parseInt(this.state.limit, 10)}`)
+        .then(res => {
+          this.setState({ gifs: res.data.data, error: '' }, () => console.log(this.state));
+        });
+    }
   }
 
   //Returns a filtered array of the search results
@@ -52,7 +56,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Beginner code challenge</h1>
         </header>
-        <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleChangeRating={this.handleChangeRating} />
+        <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit} error={this.state.error}/>
         <div className="container">
           <DisplayGifs gifs={filteredArr}/>
         </div>

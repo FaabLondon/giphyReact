@@ -4,11 +4,13 @@ import axios from 'axios';
 
 //import components
 import DisplayGifs from './components/DisplayGifs';
+import SearchBar from './components/SearchBar';
 
 class App extends Component {
 
   state = {
-    gifs: []
+    gifs: [],
+    searchfield: ''
   };
 
   //ComponentDidMount - ajax call to get gifs from giphy
@@ -20,6 +22,10 @@ class App extends Component {
       });
   }
 
+  handleChange = (e) => {
+    this.setState({ searchfield: e.target.value }, () => console.log(this.state.searchfield));
+  }
+
 
   render() {
     return (
@@ -27,6 +33,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Gif and Cie</h1>
         </header>
+        <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit} searchfield={this.state.searchfield} />
         <div className="container">
           <DisplayGifs gifs={this.state.gifs}/>
         </div>

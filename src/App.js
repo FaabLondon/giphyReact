@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 
 //import components
-
+import DisplayGifs from './components/DisplayGifs';
 
 class App extends Component {
 
@@ -25,10 +25,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="title">Gif and Cie</h1>
+          <h1 className="App-title">Gif and Cie</h1>
         </header>
         <div className="container">
-
+          <DisplayGifs gifs={this.state.gifs}/>
         </div>
       </div>
     );

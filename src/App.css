@@ -17,3 +17,57 @@ main{
   display: flex;
   flex-wrap: wrap;
 }
+
+div.card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBar{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.field{
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+label{
+  font-size: 16px;
+  margin: 10px;
+}
+
+input, select{
+  font-size: 16px;
+  text-align: center;
+  width: 200px;
+  border-radius: 5px;
+}
+
+button{
+  border: 0;
+  outline: 0;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+  color: #000;
+  background-color: #f731d6;
+}
+
+button:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #f9aeed;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
+}

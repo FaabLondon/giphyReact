@@ -11,20 +11,20 @@ class App extends Component {
   state = {
     gifs: [],
     search: '',
-    rating: 'All',
+    rating: 'All', //All by default
     limit: 1 // 1 by default
   };
 
-  //ComponentDidMount - ajax call to get gifs from giphy
-  //Used axio for request
+  //ComponentDidMount - By default, shows the trending gifs
+  //Removed it as very slow to load...
   componentDidMount(){
-    //By default, shows the trending gifs
-    //Removed it as very slow to load... axios.get('http://api.giphy.com/v1/gifs/trending?api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u')
+    //axios.get('http://api.giphy.com/v1/gifs/trending?api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u')
     //   .then(res => {
     //     this.setState({gifs: res.data.data}, () => console.log(res.data.data));
     //   });
   }
 
+  //get the different fields and their value that were changed in the form
   handleChange = (e) => {
     const {name, value} = e.target;
     this.setState({ [name]: value }, () => console.log(this.state));
@@ -50,7 +50,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gif and Cie</h1>
+          <h1 className="App-title">Beginner code challenge</h1>
         </header>
         <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleChangeRating={this.handleChangeRating} />
         <div className="container">

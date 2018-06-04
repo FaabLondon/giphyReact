@@ -1,20 +1,24 @@
 import React from 'react';
 
 //Search component - functional component is enough
-const SearchBar = ({ handleChange, handleSubmit, handleChangeRating }) => {
+const SearchBar = ({ handleChange, handleSubmit }) => {
   return(
     <div className="searchBar">
       <form onSubmit={handleSubmit}>
         <div className="field">
-          <label htmlFor="search">Search</label>
+          <label htmlFor="search">Search GIFs</label>
           <input onChange={handleChange} id="search" className="input" placeholder="Enter search" name="search" />
-          <label htmlFor="limit">Number of results</label>
-          <input onChange={handleChange} id="limit" className="input" placeholder="Enter number of results - Max 100" name="limit" min="1" max="100" />
         </div>
-        <button>Go!</button>
+
+        <div className="field">
+          <label htmlFor="limit">Number of results</label>
+          <input onChange={handleChange} id="limit" className="limit" placeholder="Nb of results (max 100)" name="limit" min="1" max="100" />
+        </div>
+
+        <button>Search</button>
       </form>
 
-      <label htmlFor="rating">Rating</label>
+      <label htmlFor="rating">Filter results by rating</label>
       <select name="rating" id="rating" onChange={handleChange} defaultValue="All">
         <option value="All">All</option>
         <option value="y">y</option>

@@ -21,14 +21,14 @@ class App extends Component {
   componentDidMount(){
     //axios.get('http://api.giphy.com/v1/gifs/trending?api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u')
     //   .then(res => {
-    //     this.setState({gifs: res.data.data}, () => console.log(res.data.data));
+    //     this.setState({gifs: res.data.data});
     //   });
   }
 
   //get the different fields and their value that were changed in the form
   handleChange = (e) => {
     const {name, value} = e.target;
-    this.setState({ [name]: value }, () => console.log(this.state));
+    this.setState({ [name]: value });
   }
 
   handleSubmit = (e) => {
@@ -38,7 +38,7 @@ class App extends Component {
       //On submit filter based on input field
       axios.get(`http://api.giphy.com/v1/gifs/search?q=${this.state.search}&api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u&limit=${parseInt(this.state.limit, 10)}`)
         .then(res => {
-          this.setState({ gifs: res.data.data, error: '' }, () => console.log(this.state));
+          this.setState({ gifs: res.data.data, error: '' });
         });
     }
   }

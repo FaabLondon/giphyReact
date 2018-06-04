@@ -28,15 +28,20 @@ While the code for this task could all be done in a single file, we are looking 
 
 ---
 
-
 ## Approach
+I decided to use one main classical component (App.js) and 2 functional sub-components. State is declared in the App.js and passed to the 2 other components.
+I used the Giphy search request which takes a query, a limit etc.
+the filtering is done on the search results thanks to a filter function.
 
-## Wins
-
-## Challenges
+## Wins and challenges
+I didn't encounter any hurdle except for the testing. When I use npm test I get error messages related to jest despite installing it, as well as jest-cli.
+I posted the issue on their github (https://github.com/facebook/jest/issues/6393) so hopefully I can get a answer.
 
 ## Setup instructions
--
+- Clone or download the repo
+- Install dependencies with `npm install`
+- Start the server with `npm start`
+- Run the tests with `npm test` - not working for now
 
 ---
 

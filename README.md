@@ -4,8 +4,7 @@ We would like you to create a tool which gives users the ability to search for a
 
 ### Requirements
 - Using React, create the application with Create React App
-- You should use the Giphy Search API to query for images
-- Use 74kCblNsHK9mSqTjNIX083FCh6tzBC1u as the API key
+- You should use the Giphy Search API to query for image
 - Use ES2015+ syntax
 - Do not use Redux or any state management library
 - Send us your code to review via GitHub

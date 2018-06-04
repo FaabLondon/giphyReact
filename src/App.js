@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+
+//import components
+
 
 class App extends Component {
+
+  state = {
+    gifs: []
+  };
+
+  //ComponentDidMount - ajax call to get gifs from giphy
+  //Used axio for request
+  componentDidMount(){
+    axios.get('http://api.giphy.com/v1/gifs/search?api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u&q=test')
+      .then(res => {
+        this.setState({gifs: res.data.data}, () => console.log(res.data.data));
+      });
+  }
+
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="title">Gif and Cie</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="container">
+
+        </div>
       </div>
     );
   }

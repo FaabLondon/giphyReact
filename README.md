@@ -44,7 +44,7 @@ I managed to get it to work again by deleting package-lock.json, yarn.lock, node
 - Clone or download the repo
 - Install dependencies with `npm install`
 - Start the server with `npm start`
-- Run the tests with `npm test` - not working for now
+- Run the tests with `npm test` 
 
 ---
 

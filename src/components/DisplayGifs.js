@@ -8,7 +8,7 @@ const DisplayGifs = ({ gifs }) => {
         <div key={i} className="card">
           <div className="card-image">
             <figure className="image">
-              <img src={gif.images.fixed_width.url} alt={ gif.slug }/>
+              <img src={gif.images.fixed_width.url} alt={ gif.title }/>
             </figure>
           </div>
         </div>

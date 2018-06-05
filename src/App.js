@@ -41,7 +41,7 @@ class App extends Component {
       //On submit filter based on input field
       axios.get(`http://api.giphy.com/v1/gifs/search?q=${this.state.search}&api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u&limit=${parseInt(this.state.limit, 10)}`)
         .then(res => {
-          this.setState({ gifs: res.data.data, error: '' });
+          this.setState({ gifs: res.data.data, error: '' }, ()=> console.log(this.state.gifs));
         });
     }
   }

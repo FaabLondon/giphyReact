@@ -6,6 +6,9 @@ import axios from 'axios';
 import DisplayGifs from './components/DisplayGifs';
 import SearchBar from './components/SearchBar';
 
+//Global variables
+const maxLimit = 100;
+
 class App extends Component {
 
   state = {
@@ -33,7 +36,7 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if(this.state.limit > 100 || this.state.limit < 1) this.setState({ error: 'Number must be between 1 and 100'});
+    if(this.state.limit > maxLimit || this.state.limit < 1) this.setState({ error: `Number must be between 1 and ${maxLimit}`});
     else {
       //On submit filter based on input field
       axios.get(`http://api.giphy.com/v1/gifs/search?q=${this.state.search}&api_key=74kCblNsHK9mSqTjNIX083FCh6tzBC1u&limit=${parseInt(this.state.limit, 10)}`)

@@ -12,7 +12,7 @@ const SearchBar = ({ handleChange, handleSubmit, error }) => {
 
         <div className="field">
           <label htmlFor="limit">Number of results</label>
-          <input onChange={handleChange} id="limit" className="limit" placeholder="Nb of results (max 100)" name="limit" min="1" max="100" />
+          <input onChange={handleChange} id="limit" className="limit" placeholder="Nb of results (max 100)" name="limit" />
         </div>
         <p>{error}</p>
 

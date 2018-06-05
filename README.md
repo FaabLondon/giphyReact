@@ -36,6 +36,9 @@ the filtering is done on the search results thanks to a filter function.
 ## Wins and challenges
 I didn't encounter any hurdle except for the testing. When I use npm test I get error messages related to jest despite installing it, as well as jest-cli.
 I posted the issue on their github (https://github.com/facebook/jest/issues/6393) so hopefully I can get a answer.
+I managed to get tests to work again and but the testing environment broke again when I installed Enzyme using the instructions given by Create React App (npm install --save enzyme enzyme-adapter-react-16 react-test-renderer)!
+I managed to get it to work again by deleting package-lock.json, yarn.lock, node_modules, removing jest from the dependencies in package.json and then running npm install and yarn install.
+
 
 ## Setup instructions
 - Clone or download the repo
